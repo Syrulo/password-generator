@@ -1,14 +1,27 @@
 let generatedPassword = '';
 
 function newPassword () {
-let word = '';
-let letters = "abcdefghijklmnopqrstuvwxyz";
-let signs = "!=?+$%*";
-let allChars = letters + signs;
-for (let i = 0; i < 10; i++){
-    let randomChar = allChars[Math.floor(Math.random() * allChars.length)];
-        word += randomChar;
-}
+    let word = '';
+    let letters = "abcdefghijklmnopqrstuvwxyz";
+    let capitalLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    let signs = "!=?+$%*";
+    let allChars = letters + capitalLetters + signs;
+
+    let randomLetter = letters[Math.floor(Math.random() * letters.length)];
+    let randomCapital = capitalLetters[Math.floor(Math.random() * capitalLetters.length)];
+    let randomSign = signs[Math.floor(Math.random() * signs.length)];
+
+    word += randomLetter;
+    word += randomCapital;
+    word += randomSign;
+
+    for (let i = 0; i < 10; i++){
+        let randomChar = allChars[Math.floor(Math.random() * allChars.length)];
+            word += randomChar;
+    }
+
+    word = word.split('').sort(() => Math.random() - 0.5).join('');
+
     return word;
 }
 
@@ -25,7 +38,6 @@ function copyButton() {
 }
 
 document.getElementById('generate-btn').addEventListener('click', function() {
-    // Appeler la fonction et afficher le mot de passe dans le champ input
     generatedPassword = newPassword(); 
     document.getElementById('password-display').value = generatedPassword;
     copyButton();
