@@ -1,0 +1,35 @@
+body {
+    background-color: #014063;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    flex-direction: column;
+}
+
+h1 {
+    margin: 0;
+    color: white;
+}
+
+p {
+    color: white;
+    margin-top: 2vh;
+}
+
+.password {
+    display: flex;
+    justify-content: center;
+    margin-top: 5vh;
+}
+
+.password-text {
+    color:black;
+    font-weight: bold;
+    text-align: center;
+}
+
+.btn {
+    margin-left: 2vh;
+}
