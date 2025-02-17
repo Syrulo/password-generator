@@ -36,4 +36,5 @@ document.getElementById('generate-btn').addEventListener('click', function() {
 document.getElementById('copy-password').addEventListener('click', function() {
     copyText();
     document.getElementById('copy-password').style.visibility='hidden';
+    document.getElementById('password-display').value = '';
 })
